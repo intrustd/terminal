@@ -1,0 +1,17 @@
+{
+    "enabled": 1,
+    "hidden": false,
+    "description": "jobset",
+    "nixexprinput": "src",
+    "nixexprpath": "jobsets.nix",
+    "checkinterval": 300,
+    "schedulingshares": 100,
+    "enableemail": true,
+    "emailoverride": "hi@intrustd.com",
+    "keepnr": 3,
+    "inputs": {
+        "src": { "type": "git", "value": "git://github.com/intrustd/terminal.git", "emailresponsible": true },
+        "nixpkgs": { "type": "git", "value": "git://github.com/intrustd/nixpkgs intrustd", "emailresponsible": false },
+        "intrustd": { "type": "git", "value": "git://github.com/intrustd/daemon.git", "emailresponsible": true }
+    }
+}

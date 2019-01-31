@@ -1,0 +1,3 @@
+[submodule "vendor/gotty"]
+	path = vendor/gotty
+	url = git://github.com/yudai/gotty.git

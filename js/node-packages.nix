@@ -9189,7 +9189,7 @@ let
     name = "ttyd";
     packageName = "ttyd";
     version = "1.1.0";
-    src = (pkgs.callPackage ../ttyd.nix {}).src + /html;;
+    src = (pkgs.callPackage ../ttyd.nix {}).src + /html;
     dependencies = [
       sources."@shellscape/koa-send-4.1.3"
       sources."@shellscape/koa-static-4.0.5"

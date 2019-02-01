@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
-{
+let ttyd = pkgs.callPackage ./ttyd.nix {};
+in {
 
   app.version = { major = 0; minor = 1; };
 
@@ -16,11 +17,11 @@
 
   app.startHook = ''
     export PATH=/bin
-    exec ${pkgs.gotty.bin}/bin/gotty ${pkgs.bash}/bin/bash
+    exec ${ttyd}/bin/gotty ${pkgs.bash}/bin/bash
   '';
 
   app.healthCheckHook = ''
-    ${pkgs.procps}/bin/ps -A | ${pkgs.gnugrep}/bin/grep gotty
+    ${pkgs.procps}/bin/ps -A | ${pkgs.gnugrep}/bin/grep ttyd
     exit $?
   '';
 

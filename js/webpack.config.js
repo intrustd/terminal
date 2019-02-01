@@ -1,1 +1,0 @@
-../vendor/gotty/js/webpack.config.js

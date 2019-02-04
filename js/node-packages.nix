@@ -7553,13 +7553,13 @@ let
         sha512 = "rPzPisCzW68Okj1zNrfa2dR9uEm43SevDmpR6FChoZABFk9dANGnzzBMgHYUXI3609//63fnVkyQ1SQmAMyjww==";
       };
     };
-    "uglify-js-3.3.28" = {
+    "uglify-js-3.3.4" = {
       name = "uglify-js";
       packageName = "uglify-js";
-      version = "3.3.28";
+      version = "3.3.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/uglify-js/-/uglify-js-3.3.28.tgz";
-        sha512 = "68Rc/aA6cswiaQ5SrE979UJcXX+ADA1z33/ZsPd+fbAiVdjZ16OXdbtGO+rJUUBgK6qdf3SOPhQf3K/ybF5Miw==";
+        url = "https://registry.npmjs.org/uglify-js/-/uglify-js-3.3.4.tgz";
+        sha512 = "2xnm5j27ds49pw0jxr30vj79ib0l0g4sbpdy7l3jvcjxdrwy0g4g8w9h69fk7fr45bs0mm9xj9pv0d1jvcva53x7xbxkr880jw31wl5";
       };
     };
     "uglify-js-3.4.9" = {
@@ -9261,7 +9261,7 @@ let
           sources."source-map-0.6.1"
         ];
       })
-      (sources."uglify-js-3.3.28" // {
+      (sources."uglify-js-3.3.4" // {
         dependencies = [
           sources."source-map-0.6.1"
         ];

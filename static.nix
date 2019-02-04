@@ -6,7 +6,7 @@ let nodePkgSet = import ./js { pkgs = pkgs.buildPackages; nodejs = pkgs.buildPac
 
 in stdenv.mkDerivation {
   name = "terminal-static";
-  src = (pkgs.callPackage ./ttyd.nix {}).src + /html;
+  src = ./js;
 
   nativeBuildInputs = with pkgs; [ nodeDeps nodejs-8_x ];
 

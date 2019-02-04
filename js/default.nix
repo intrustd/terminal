@@ -10,8 +10,20 @@ let
     inherit nodejs;
     libtool = if pkgs.stdenv.isDarwin then pkgs.darwin.cctools else null;
   };
+
+  ttyd-src =
+    with pkgs;
+    let baseDir = (fetchgit {
+          url = "git://github.com/tsl0922/ttyd.git";
+          rev = "1.4.2";
+          sha256 = "119c3whq3yl3kiyk39lj0plhq62jvcrmas7zpdfbbjw1vrjmg6gj";
+        });
+    in runCommand "ttyd-src.tgz" {} ''
+      tar -cvf $out -C ${baseDir} html
+    '';
+
 in
 import ./node-packages.nix {
   inherit (pkgs) fetchurl fetchgit;
-  inherit nodeEnv;
+  inherit nodeEnv ttyd-src;
 }

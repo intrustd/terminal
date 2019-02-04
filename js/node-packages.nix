@@ -7544,13 +7544,13 @@ let
         sha1 = "867ac74e3864187b1d3d47d996a78ec5c8830777";
       };
     };
-    "uglify-es-3.3.10" = {
+    "uglify-es-3.3.9" = {
       name = "uglify-es";
       packageName = "uglify-es";
-      version = "3.3.10";
+      version = "3.3.9";
       src = fetchurl {
-        url = "https://registry.npmjs.org/uglify-es/-/uglify-es-3.3.10.tgz";
-        sha512 = "rPzPisCzW68Okj1zNrfa2dR9uEm43SevDmpR6FChoZABFk9dANGnzzBMgHYUXI3609//63fnVkyQ1SQmAMyjww==";
+        url = "https://registry.npmjs.org/uglify-es/-/uglify-es-3.3.9.tgz";
+        sha512 = "2qxgbmzpbrlblkyksxqvq93mvsyqanaynvlwhmcnd8ya7jnf6wzkv7dbf09aq3595wbgw6ajwspiaypvndcbdz5g7sbzq7gnz919qxg";
       };
     };
     "uglify-js-3.3.4" = {
@@ -9255,7 +9255,7 @@ let
       sources."tunnel-agent-0.6.0"
       sources."tweetnacl-0.14.5"
       sources."typedarray-0.0.6"
-      (sources."uglify-es-3.3.10" // {
+      (sources."uglify-es-3.3.9" // {
         dependencies = [
           sources."commander-2.14.1"
           sources."source-map-0.6.1"

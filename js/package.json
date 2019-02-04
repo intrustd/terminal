@@ -15,8 +15,8 @@
         "watch": "webpack --progress --watch --config webpack.dev.js"
     },
     "dependencies": {
-        "intrustd": "../../../js",
-        "ttyd": "../vendor/ttyd/html"
+        "intrustd": "intrustd/js",
+        "ttyd": "./ttyd/html"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",

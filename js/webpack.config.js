@@ -11,6 +11,16 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.ts$/,
+                enforce: 'pre',
+                use: 'tslint-loader',
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules\/(?!zmodem.js\/)/,
                 use: {
@@ -29,6 +39,9 @@ module.exports = {
                 ],
             },
         ]
+    },
+    resolve: {
+        extensions: [ '.tsx', '.ts', '.js' ],
     },
     plugins: [
         new CopyWebpackPlugin([

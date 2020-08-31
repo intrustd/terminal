@@ -7,4 +7,4 @@ install({ permissions: [ "intrustd+perm://terminal.intrustd.com/access" ],
 
 console.log("Window.websocket is now ", WebSocket)
 
-import 'ttyd/js/app.js';
+import 'ttyd/src/index.tsx';

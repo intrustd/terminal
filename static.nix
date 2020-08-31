@@ -4,6 +4,10 @@ let nodePkgSet = import ./js { pkgs = pkgs.buildPackages; nodejs = pkgs.buildPac
 
     nodeDeps = (nodePkgSet.shell.override { bypassCache = true; }).nodeDependencies;
 
+    icon = pkgs.runCommand "terminal.svg" { infile = ./terminal.svg; passAsFile = [ "infile" ];} ''
+      cp $infile $out
+    '';
+
 in stdenv.mkDerivation {
   name = "terminal-static";
   src = ./js;
@@ -21,5 +25,8 @@ in stdenv.mkDerivation {
   installPhase = ''
      cp -R ./dist $out
      cp ${manifest} $out/manifest.json
+
+     mkdir -p $out/images/
+     cp ${icon} $out/images/terminal.svg
   '';
 }

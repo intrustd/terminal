@@ -4,10 +4,14 @@ let nodePkgSet = import ./js { pkgs = pkgs.buildPackages; nodejs = pkgs.buildPac
 
     nodeDeps = (nodePkgSet.shell.override { bypassCache = true; }).nodeDependencies;
 
-    icon = pkgs.runCommand "terminal.svg" { infile = ./terminal.svg; passAsFile = [ "infile" ];} ''
-      echo "Building terminal.svg ->" $out
-      cp $infile $out
-    '';
+    icon = stdenv.mkDerivation {
+      name = "terminal.svg";
+      src = ./terminal.svg;
+      phases = [ "installPhase" ];
+      installPhase = ''
+        cp $src $out
+      '';
+    };
 
 in stdenv.mkDerivation {
   name = "terminal-static";

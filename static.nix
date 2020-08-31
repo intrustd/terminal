@@ -17,7 +17,7 @@ in stdenv.mkDerivation {
   name = "terminal-static";
   src = ./js;
 
-  nativeBuildInputs = with pkgs; [ nodeDeps nodejs-12_x ];
+  nativeBuildInputs = with pkgs; [ nodeDeps nodejs-8_x ];
 
   phases = [ "unpackPhase" "buildPhase" "installPhase" ];
 

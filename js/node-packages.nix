@@ -8075,6 +8075,15 @@ let
         sha512 = "DVmQ8jlEtL+WbBKUZuMxHMBgK/yeIZwkXB81bH+MGaKKnJGYwA+770hzhXPfwEIokK9On9YIFPRleVp/5G7z9g==";
       };
     };
+    "xterm-4.8.1" = {
+      name = "xterm";
+      packageName = "xterm";
+      version = "4.8.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/xterm/-/xterm-4.8.1.tgz";
+        sha512 = "ax91ny4tI5eklqIfH79OUSGE2PUX2rGbwONmB6DfqpyhSZO8/cf++sqiaMWEVCMjACyMfnISW7C3gGMoNvNolQ==";
+      };
+    };
     "y18n-4.0.0" = {
       name = "y18n";
       packageName = "y18n";
@@ -9291,7 +9300,11 @@ let
       sources."true-case-path-1.0.3"
       sources."tslib-1.13.0"
       sources."tty-browserify-0.0.0"
-      sources."ttyd-./ttyd/html"
+      (sources."ttyd-./ttyd/html" // {
+        dependencies = [
+          sources."xterm-3.14.5"
+        ];
+      })
       sources."tunnel-agent-0.6.0"
       sources."tweetnacl-0.14.5"
       sources."typedarray-0.0.6"
@@ -9423,7 +9436,7 @@ let
       })
       sources."wrappy-1.0.2"
       sources."xtend-4.0.2"
-      sources."xterm-3.14.5"
+      sources."xterm-4.8.1"
       sources."y18n-4.0.0"
       sources."yallist-2.1.2"
       (sources."yargs-13.3.2" // {
